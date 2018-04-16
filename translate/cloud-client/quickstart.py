@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+# coding: UTF-8
 # Copyright 2016 Google Inc. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -24,14 +24,17 @@ def run_quickstart():
     translate_client = translate.Client()
 
     # The text to translate
-    text = u'Hello, world!'
+    text = u'一二三四五六七八九〇'
+    # The source language
+    source = 'ja'
     # The target language
-    target = 'ru'
-
-    # Translates some text into Russian
+    target = 'en'
+    # Translates some text into English
     translation = translate_client.translate(
         text,
+        source_language=source,
         target_language=target)
+
 
     print(u'Text: {}'.format(text))
     print(u'Translation: {}'.format(translation['translatedText']))
